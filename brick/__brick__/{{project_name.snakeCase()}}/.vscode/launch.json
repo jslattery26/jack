@@ -1,0 +1,57 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Mac Local",
+            // "preLaunchTask": "Launch Firebase Emulator Suite",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_local.dart",
+            "args": [
+                "-d",
+                "macos"
+            ]
+        },
+        {
+            "name": "Mac Development",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "-d",
+                "macos"
+            ]
+        },
+        {
+            "name": "Local",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_local.dart",
+            "args": [
+                "--flavor",
+                "local",
+            ]
+        },
+        {
+            "name": "Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev",
+            ]
+        },
+        {
+            "name": "Prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "--flavor",
+                "prod",
+                "--release",
+            ]
+        },
+    ],
+}
