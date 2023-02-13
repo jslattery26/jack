@@ -6,7 +6,7 @@ flutter_icons:
   adaptive_icon_foreground: "assets/launcher_icons/foreground.png"
   macos:
     generate: true
-    image_path: "assets/launcher_icons/icon_mac.png"
+    image_path: "assets/launcher_icons/icon-mac.png"
   web:
     generate: true
     image_path: "assets/launcher_icons/icon-dev.png"
