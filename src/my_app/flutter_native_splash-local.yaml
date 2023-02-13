@@ -1,11 +1,11 @@
 # flutter pub run flutter_native_splash:create --flavor local
 flutter_native_splash:
   color: "#FFFFFF"
-  image: assets/foreground.png
+  image: assets/launcher_icons/foreground.png
   color_dark: "#FFFFFF"
-  image_dark: assets/foreground.png
+  image_dark: assets/launcher_icons/foreground.png
   android_12:
-    image: assets/foreground.png
+    image: assets/launcher_icons/foreground.png
     icon_background_color: "#FFFFFF"
-    image_dark: assets/foreground.png
+    image_dark: assets/launcher_icons/foreground.png
     icon_background_color_dark: "#FFFFFF"

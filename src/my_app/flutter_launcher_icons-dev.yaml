@@ -7,3 +7,6 @@ flutter_icons:
   macos:
     generate: true
     image_path: "assets/launcher_icons/icon_mac.png"
+  web:
+    generate: true
+    image_path: "assets/launcher_icons/icon-dev.png"

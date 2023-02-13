@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+
   #firebase
   firebase_auth: ^4.2.5
   firebase_core: ^2.4.1
@@ -38,7 +38,7 @@ dependencies:
   device_preview: ^1.1.0
   dynamic_color: ^1.5.4
   device_info_plus: ^8.0.0
-  
+
   #you can remove this when you're done with it
   rename: ^2.1.1
   package_rename: ^1.0.0+1
@@ -51,7 +51,7 @@ dev_dependencies:
   freezed: ^2.3.2
   json_serializable: ^6.6.0
   flutter_native_splash: ^2.2.11
-  flutter_launcher_icons: ^0.10.0
+  flutter_launcher_icons: ^0.11.0
 
 flutter:
   uses-material-design: true

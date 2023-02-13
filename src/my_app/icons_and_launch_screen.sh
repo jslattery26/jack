@@ -1,4 +1,3 @@
-cd app
 set -a
 source .env
 set +a
