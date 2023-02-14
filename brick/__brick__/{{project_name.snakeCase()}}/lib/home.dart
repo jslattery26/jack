@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:{{project_name.snakeCase()}}/global_providers.dart';
-import 'package:{{project_name.snakeCase()}}/services/auth_service.dart';
+import 'package:opposity/global_providers.dart';
+import 'package:opposity/services/auth_service.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class HomeScreen extends HookConsumerWidget {
@@ -13,7 +13,7 @@ class HomeScreen extends HookConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Home'),
-            Text(ref.watch(firebaseAuthProvider).currentUser!.email.toString()),
+            Text(ref.watch(firebaseAuthProvider).currentUser!.uid.toString()),
             ElevatedButton(
               onPressed: () {
                 final auth = ref.watch(authServiceProvider);

@@ -25,7 +25,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         return '/login';
       } else {
         if (state.location == '/welcome' || state.location == '/login') {
-          return '/join';
+          return '/home';
         }
       }
       return null;
@@ -33,7 +33,7 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(
         path: '/',
-        redirect: (context, state) => '/home/trending',
+        redirect: (context, state) => '/home',
       ),
       GoRoute(
         name: 'welcome',
