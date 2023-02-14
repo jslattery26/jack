@@ -1,6 +1,6 @@
 name: jack
 description: a starter template for flutter/firebase/riverpod/hooks/gorouter/flavors/theming/icons/launchscreen.
-repository: "none yet"
+repository: "https://github.com/jslattery26/jack"
 version: 0.0.1
 
 environment:
