@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:opposity/global_providers.dart';
-import 'package:opposity/services/auth_service.dart';
+import 'package:{{project_name.snakeCase()}}/global_providers.dart';
+import 'package:{{project_name.snakeCase()}}/services/auth_service.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class HomeScreen extends HookConsumerWidget {
