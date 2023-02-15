@@ -30,7 +30,6 @@ Future<void> configureEmulators() async {
         }
       }
     }
-    print(host);
     FirebaseFirestore.instance.settings = const Settings(
       persistenceEnabled: false,
     );
@@ -45,6 +44,9 @@ Future<void> configureEmulators() async {
 Future<void> init(AppEnvironment env) async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
   ]);
 
   if (env == AppEnvironment.local) {
