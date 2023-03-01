@@ -65,13 +65,13 @@ android {
             resValue "string", "app_name", "ChangeMyAppName(local)"
             versionNameSuffix ".local"
         }
-        tv {
+        dev {
             dimension "flavor"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "ChangeMyAppName(dev)"
             versionNameSuffix ".dev"
         }
-        app {
+        prod {
             dimension "flavor"
             resValue "string", "app_name", "ChangeMyAppName"
         }

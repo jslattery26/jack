@@ -65,13 +65,13 @@ android {
             resValue "string", "app_name", "{{project_name.titleCase()}}(local)"
             versionNameSuffix ".local"
         }
-        tv {
+        dev {
             dimension "flavor"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "{{project_name.titleCase()}}(dev)"
             versionNameSuffix ".dev"
         }
-        app {
+        prod {
             dimension "flavor"
             resValue "string", "app_name", "{{project_name.titleCase()}}"
         }

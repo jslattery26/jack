@@ -1,3 +1,7 @@
+# 0.0.6
+
+- flavor issue
+
 # 0.0.5
 
 - smooth the auth experience
