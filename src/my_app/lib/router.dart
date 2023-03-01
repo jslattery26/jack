@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_jack/global_providers.dart';
 import 'package:flutter_jack/home.dart';
+import 'package:flutter_jack/login.dart';
 import 'package:flutter_jack/services/auth_service.dart';
 // Package imports:
 import 'package:go_router/go_router.dart';
@@ -44,11 +45,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: 'login',
         path: '/login',
         builder: (context, state) {
-          ref.watch(authServiceProvider).signInAnonymously().then((value) {
-            context.go('/join');
-          });
-          //should never get here
-          return const SizedBox();
+          return const LoginScreen();
         },
       ),
       GoRoute(

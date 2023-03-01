@@ -1,3 +1,11 @@
+# 0.0.5
+
+- smooth the auth experience
+
+# 0.0.4
+
+- fix issues with schemes xcode
+
 # 0.0.3
 
 - fix locked down to portrait

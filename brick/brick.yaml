@@ -1,7 +1,7 @@
 name: jack
 description: a starter template for flutter/firebase/riverpod/hooks/gorouter/flavors/theming/icons/launchscreen.
 repository: "https://github.com/jslattery26/jack"
-version: 0.0.4
+version: 0.0.5
 
 environment:
   mason: ">=0.1.0-dev.40 <0.1.0"
@@ -24,5 +24,5 @@ vars:
   description:
     type: string
     description: A short project description
-    default: JackApp
+    default: My jack app
     prompt: What is the project description?
