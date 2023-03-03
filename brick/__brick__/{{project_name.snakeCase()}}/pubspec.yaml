@@ -39,10 +39,6 @@ dependencies:
   dynamic_color: ^1.5.4
   device_info_plus: ^8.0.0
 
-  #you can remove this when you're done with it
-  rename: ^2.1.1
-  package_rename: ^1.0.0+1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

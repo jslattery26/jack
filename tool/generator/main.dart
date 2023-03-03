@@ -15,7 +15,7 @@ extension GeneratorStringX on String {
 
     if (isAndroid && filePath.endsWith('build.gradle')) {
       return replaceAll(
-        'com.jackslattery.flutter_jack',
+        'com.jackslattery.flutterJack',
         '{{application_id_android}}',
       );
     } else if (isAndroid) {
@@ -24,7 +24,7 @@ extension GeneratorStringX on String {
         '{{org_name.dotCase()}}.{{project_name.snakeCase()}}',
       );
     } else {
-      return replaceAll('com.jackslattery.flutterjack', '{{application_id}}');
+      return replaceAll('com.jackslattery.flutter_jack', '{{application_id}}');
     }
   }
 }
@@ -65,15 +65,12 @@ void main() async {
         }
 
         final contents = await file.readAsString();
-        file = await file.writeAsString(
-          contents
-              .replaceAll('flutter_jack', '{{project_name.snakeCase()}}')
-              .replaceAll('flutter_jack', '{{project_name.paramCase()}}')
-              .replaceAll('A new Flutter project.', '{{{description}}}')
-              .replaceAll('ChangeMyAppName', '{{project_name.titleCase()}}')
-              .replaceApplicationId(file.path),
-        );
-
+        file = await file.writeAsString(contents
+            .replaceAll('flutter_jack', '{{project_name.snakeCase()}}')
+            .replaceAll('flutter_jack', '{{project_name.paramCase()}}')
+            .replaceAll('A new Flutter project.', '{{{description}}}')
+            .replaceAll('ChangeMyAppName', '{{project_name.titleCase()}}')
+            .replaceApplicationId(file.path));
         final fileSegments = file.path.split('/').sublist(2);
         if (fileSegments.contains('flutter_jack')) {
           final newPathSegment = fileSegments.join('/').replaceAll(

@@ -1,0 +1,1 @@
+dart ./tool/generator/main.dart
