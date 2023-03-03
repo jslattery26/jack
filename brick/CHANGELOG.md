@@ -1,3 +1,6 @@
+# 0.0.7
+
+- fix a bunch of naming issues
 # 0.0.6
 
 - flavor issue

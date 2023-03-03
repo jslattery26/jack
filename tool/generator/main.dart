@@ -15,16 +15,16 @@ extension GeneratorStringX on String {
 
     if (isAndroid && filePath.endsWith('build.gradle')) {
       return replaceAll(
-        'com.jackslattery.flutterJack',
+        'com.jackslattery.flutterjack',
         '{{application_id_android}}',
       );
     } else if (isAndroid) {
       return replaceAll(
-        'com.jackslattery.flutter_jack',
+        'com.jackslattery.flutterjack',
         '{{org_name.dotCase()}}.{{project_name.snakeCase()}}',
       );
     } else {
-      return replaceAll('com.jackslattery.flutter_jack', '{{application_id}}');
+      return replaceAll('com.jackslattery.flutterjack', '{{application_id}}');
     }
   }
 }
@@ -66,11 +66,16 @@ void main() async {
 
         final contents = await file.readAsString();
         file = await file.writeAsString(contents
-            .replaceAll('flutter_jack', '{{project_name.snakeCase()}}')
-            .replaceAll('flutter_jack', '{{project_name.paramCase()}}')
-            .replaceAll('A new Flutter project.', '{{{description}}}')
-            .replaceAll('ChangeMyAppName', '{{project_name.titleCase()}}')
-            .replaceApplicationId(file.path));
+                .replaceAll('flutter_jack', '{{project_name.snakeCase()}}')
+                .replaceAll('flutter_jack', '{{project_name.paramCase()}}')
+                .replaceAll('A new Flutter project.', '{{{description}}}')
+                .replaceAll('ChangeMyAppName', '{{project_name.titleCase()}}')
+                .replaceApplicationId(file.path)
+            // .replaceAll(
+            //   'Copyright © 2023 com.jackslattery.flutter_jack. All rights reserved.',
+            //   'Copyright © 2023 {{application_id}} All rights reserved.',
+            // ),
+            );
         final fileSegments = file.path.split('/').sublist(2);
         if (fileSegments.contains('flutter_jack')) {
           final newPathSegment = fileSegments.join('/').replaceAll(

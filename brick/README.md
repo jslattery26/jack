@@ -13,6 +13,22 @@ a starter template for flutter/firebase/riverpod/hooks/gorouter/flavors/theming/
   use `--account <email>`if you need to specify firebase account
   ```
   flutterfire config
+  
+  flutterfire config \
+  --project=<project-name-firebase> \
+  --out=lib/firebase_options_local.dart \
+  --ios-bundle-id=<bundle-id>.local \
+  --macos-bundle-id=<bundle-id>.local \
+  --android-package-name=<bundle-id>.local
+  
+  flutterfire config \
+  --project=<project-name-firebase> \
+  --out=lib/firebase_options_dev.dart \
+  --ios-bundle-id=<bundle-id>.dev \
+  --macos-bundle-id=<bundle-id>.dev \
+  --android-package-name=<bundle-id>.dev
+  
+  
   ```
   
   **\*steps 2 and 3 are optional**

@@ -8,7 +8,7 @@
 PRODUCT_NAME = {{project_name.snakeCase()}}
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.jackslattery.flutterjack
+PRODUCT_BUNDLE_IDENTIFIER = {{application_id}}
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.jackslattery.{{project_name.snakeCase()}}. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 {{application_id}}. All rights reserved.
