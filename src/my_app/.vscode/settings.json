@@ -4,4 +4,11 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
+    "search.exclude": {
+        "**/.g.dart": true,
+        "**/.fvm": true,
+        "**/.symlinks": true,
+        "**/build/": true,
+        "**/Pods/": true
+    }
 }

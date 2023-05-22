@@ -9,28 +9,17 @@ a starter template for flutter/firebase/riverpod/hooks/gorouter/flavors/theming/
 
 ## Firebase Setup
 
-  1) (the only required step) in app dir (install flutterfire if you haven't)
-  use `--account <email>`if you need to specify firebase account
+  
+1) in your new app dir 
+     - if you don't have flutterfire yet run `dart pub global activate flutterfire_cli`
+
   ```
-  flutterfire config
-  
-  flutterfire config \
-  --project=<project-name-firebase> \
-  --out=lib/firebase_options_local.dart \
-  --ios-bundle-id=<bundle-id>.local \
-  --macos-bundle-id=<bundle-id>.local \
-  --android-package-name=<bundle-id>.local
-  
-  flutterfire config \
-  --project=<project-name-firebase> \
-  --out=lib/firebase_options_dev.dart \
-  --ios-bundle-id=<bundle-id>.dev \
-  --macos-bundle-id=<bundle-id>.dev \
-  --android-package-name=<bundle-id>.dev
-  
-  
+  chmod +x flutterfire_config_flavors.sh
+
+  ./flutterfire_config_flavors <Firebase-Project-ID> <Firebase-Account-Email (optional)>
   ```
-  
+  only add account email parameter if you need to specify firebase account
+
   **\*steps 2 and 3 are optional**
 
   2) Go to firebase console of project that you created (or existed)
@@ -57,7 +46,7 @@ a starter template for flutter/firebase/riverpod/hooks/gorouter/flavors/theming/
       │   icon-local.png
       │   foreground.png
   ```
-  2) in <your-app-dir> create an .env file with your flavor colors
+  2) in <your-app-dir> rename the .env_config file to .env and edit to your flavor colors
   ```env
     LOCAL_COLOR='"#FFFFFF"'
     DEV_COLOR='"#000000"'

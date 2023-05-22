@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:{{project_name.snakeCase()}}/theming/styles.dart';
 
 class Themes {
   const Themes();
@@ -66,19 +67,24 @@ class Themes {
     surfaceTint: Color(0xFFFFB2BB),
   );
 
-  static buildLightTheme(ColorScheme? lightColorScheme) {
+  static buildTheme(BuildContext context, bool isDark) {
+    final styles = Styles(context: context);
     final baseTheme = ThemeData(
-      colorScheme: lightColorScheme ?? defaultDarkColorScheme,
+      visualDensity: VisualDensity.standard,
+      colorScheme: isDark ? defaultDarkColorScheme : defaultLightColorScheme,
       useMaterial3: true,
+      inputDecorationTheme: styles.inputDecorationTheme,
+      dividerTheme: styles.dividerTheme,
+      textButtonTheme: styles.textButtonTheme,
+      elevatedButtonTheme: styles.elevatedButtonTheme,
     );
-    return baseTheme;
-  }
-
-  static buildDarkTheme(ColorScheme? darkColorScheme) {
-    final baseTheme = ThemeData(
-      colorScheme: darkColorScheme ?? defaultDarkColorScheme,
-      useMaterial3: true,
-    );
-    return baseTheme;
+    return baseTheme.copyWith(
+        // textTheme: GoogleFonts.poppinsTextTheme(
+        //   baseTheme.textTheme.copyWith(
+        //     titleLarge: baseTheme.textTheme.titleLarge
+        //         ?.copyWith(fontSize: 18, fontWeight: FontWeight.w500),
+        //   ),
+        // ),
+        );
   }
 }

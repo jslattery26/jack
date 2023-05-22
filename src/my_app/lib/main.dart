@@ -19,8 +19,8 @@ class MyApp extends ConsumerWidget {
             routerConfig: router,
             title: '',
             themeMode: ThemeMode.system,
-            theme: Themes.buildLightTheme(lightColorScheme),
-            darkTheme: Themes.buildDarkTheme(darkColorScheme),
+            theme: Themes.buildTheme(context, false),
+            darkTheme: Themes.buildTheme(context, true),
             debugShowCheckedModeBanner: false,
           );
         },

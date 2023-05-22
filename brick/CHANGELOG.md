@@ -1,3 +1,9 @@
+# 1.0.0
+
+- update all of the dependencies
+- change to riverpod generator
+- change theming to be better
+- easier flutterfire setup for flavors (script)
 # 0.0.7
 
 - fix a bunch of naming issues

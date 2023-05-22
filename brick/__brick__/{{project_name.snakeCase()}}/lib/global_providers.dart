@@ -6,60 +6,60 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:{{project_name.snakeCase()}}/extensions/preferences_extensions.dart';
 import 'package:logger/logger.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'extensions/preferences_extensions.dart';
+part 'global_providers.g.dart';
 
-// Provide an instance of FirebaseAuth
-final firebaseAuthProvider =
-    Provider<FirebaseAuth>((ref) => FirebaseAuth.instance);
+@Riverpod(keepAlive: true)
+FirebaseAuth firebaseAuth(FirebaseAuthRef ref) => FirebaseAuth.instance;
 
-// Provide an instance of FirebaseFirestore
-final firebaseFirestoreProvider =
-    Provider<FirebaseFirestore>((ref) => FirebaseFirestore.instance);
+@riverpod
+FirebaseFirestore firebaseFirestore(FirebaseFirestoreRef ref) =>
+    FirebaseFirestore.instance;
 
-// Provide an instance of FirebaseFirestore
-final firebaseFunctionsProvider =
-    Provider<FirebaseFunctions>((ref) => FirebaseFunctions.instance);
+@riverpod
+FirebaseFunctions firebaseFunctions(FirebaseFunctionsRef ref) =>
+    FirebaseFunctions.instance;
 
-// Provide an instance of FirebaseFirestore
-final firebaseStorageProvider =
-    Provider<FirebaseStorage>((ref) => FirebaseStorage.instance);
+@riverpod
+FirebaseStorage firebaseStorage(FirebaseStorageRef ref) =>
+    FirebaseStorage.instance;
 
-// Provide an instance of FirebaseRemoteConfig
-final remoteConfigProvider = Provider<FirebaseRemoteConfig>((ref) {
+@riverpod
+FirebaseRemoteConfig remoteConfig(RemoteConfigRef ref) {
   FirebaseRemoteConfig.instance.fetchAndActivate();
   return FirebaseRemoteConfig.instance;
-});
+}
 
-// Provide an instance of FirebaseFirestore
-final firebaseMessagingProvider =
-    Provider<FirebaseMessaging>((ref) => FirebaseMessaging.instance);
+@riverpod
+FirebaseMessaging firebaseMessaging(FirebaseMessagingRef ref) =>
+    FirebaseMessaging.instance;
 
-// Provide an instance of FirebaseFirestore
-final firebaseAnalyticsProvider =
-    Provider<FirebaseAnalytics>((ref) => FirebaseAnalytics.instance);
+@riverpod
+FirebaseAnalytics firebaseAnalytics(FirebaseAnalyticsRef ref) =>
+    FirebaseAnalytics.instance;
 
-// Provide an instance of FirebaseFirestore
-final firebaseCrashlyticsProvider =
-    Provider<FirebaseCrashlytics>((ref) => FirebaseCrashlytics.instance);
+@riverpod
+FirebaseCrashlytics firebaseCrashlytics(FirebaseCrashlyticsRef ref) =>
+    FirebaseCrashlytics.instance;
 
-final sharedPreferencesProvider = Provider<SharedPreferences>(
-  (ref) => throw UnimplementedError(),
-  name: 'SharedPreferencesProvider',
-);
-final gamePreferencesProvider = Provider.family<Preferences, String?>(
-  (ref, prefix) => Preferences.basic(
+@riverpod
+SharedPreferences sharedPreferences(SharedPreferencesRef ref) =>
+    throw UnimplementedError();
+
+@riverpod
+Preferences customPreferences(
+  CustomPreferencesRef ref,
+  String? prefix,
+) {
+  return Preferences.basic(
     sharedPreferences: ref.watch(sharedPreferencesProvider),
     prefix: prefix,
-  ),
-  name: 'PreferencesProvider',
-);
+  );
+}
 
-final loggerProvider = Provider<Logger>(
-  (ref) => Logger(
-    printer: PrettyPrinter(methodCount: 1),
-  ),
-);
+@riverpod
+Logger logger(LoggerRef ref) => Logger(printer: PrettyPrinter(methodCount: 1));

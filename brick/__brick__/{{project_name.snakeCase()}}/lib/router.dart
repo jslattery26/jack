@@ -7,9 +7,13 @@ import 'package:{{project_name.snakeCase()}}/login.dart';
 import 'package:{{project_name.snakeCase()}}/services/auth_service.dart';
 // Package imports:
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+part 'router.g.dart';
 
-final routerProvider = Provider<GoRouter>((ref) {
+@riverpod
+GoRouter router(
+  RouterRef ref,
+) {
   final authService = ref.read(authServiceProvider);
   return GoRouter(
     debugLogDiagnostics: true,
@@ -56,7 +60,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
     ],
   );
-});
+}
 
 class GoRouterRefreshStream extends ChangeNotifier {
   GoRouterRefreshStream(Stream<dynamic> stream) {

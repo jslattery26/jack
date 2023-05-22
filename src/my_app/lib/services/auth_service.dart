@@ -1,12 +1,12 @@
 // import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_jack/global_providers.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart' as riverpod;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+part 'auth_service.g.dart';
 
-final authServiceProvider = riverpod.Provider<AuthService>((ref) {
-  return AuthService(ref);
-});
+@riverpod
+AuthService authService(AuthServiceRef ref) => AuthService(ref);
 
 class AuthService {
   final Ref ref;

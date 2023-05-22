@@ -1,26 +1,22 @@
 name: jack
 description: a starter template for flutter/firebase/riverpod/hooks/gorouter/flavors/theming/icons/launchscreen.
-repository: "https://github.com/jslattery26/jack"
-version: 0.0.7
+repository: 'https://github.com/jslattery26/jack'
+version: 1.0.0
 
 environment:
-  mason: ">=0.1.0-dev.40 <0.1.0"
+  mason: '>=0.1.0-dev.40 <0.1.0'
 
 vars:
   project_name:
     type: string
     description: The project name
-    default: my_app
+    default: myapp
     prompt: What is the project name?
   org_name:
     type: string
     description: The organization name
     default: com.example
     prompt: What is the organization name?
-  application_id:
-    type: string
-    description: The application id on Android, Bundle ID on iOS and company name on Windows. If omitted value will be formed by org_name + . + project_name.
-    prompt: What is the application id?
   description:
     type: string
     description: A short project description
